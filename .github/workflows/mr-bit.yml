@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: Mr Bit
 on:
   push:
     branches: [ main ]
