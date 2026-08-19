@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "WA Technology",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test:cucumber": "cucumber-js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ma-raducanu/pw-mr-bit.git"
