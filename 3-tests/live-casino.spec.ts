@@ -1,7 +1,7 @@
 import { test, expect } from '../2-fixtures/pages.fixture';
 
 test.beforeEach(async ({ casinoPage }) => {
-  await casinoPage.goToCasino();
+  await casinoPage.goToHome();
   await casinoPage.acceptCookies();
   await casinoPage.liveCasinoLink.click();
 });

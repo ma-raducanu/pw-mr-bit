@@ -1,9 +1,7 @@
 import type { Locator, FrameLocator, Page } from '@playwright/test';
-import { expect } from '@playwright/test';
+import { BasePage } from './basePage';
 
-export class CasinoPage {
-  protected readonly page: Page;
-  readonly acceptCookiesButton: Locator;
+export class CasinoPage extends BasePage {
   readonly casinoLink: Locator;
   readonly liveCasinoLink: Locator;
   readonly sportsLink: Locator;
@@ -36,8 +34,7 @@ export class CasinoPage {
   readonly gameCard: Locator;
 
   constructor(page: Page) {
-    this.page = page;
-    this.acceptCookiesButton = page.getByRole('button', { name: 'Allow all' });
+    super(page);
     this.casinoLink = page.getByRole('link', { name: 'Casino' }).first();
     this.liveCasinoLink = page.getByRole('link', { name: 'Live Casino' }).first();
     this.sportsLink = page.getByRole('link', { name: 'Sports' }).first();
@@ -68,19 +65,5 @@ export class CasinoPage {
     this.menuDropdown = page.locator('div.responsive-menu__dropdown');
     this.newGamesLink = page.getByRole('link', { name: 'New' });
     this.gameCard = page.locator('div.game-cell-outer');
-  }
-  
-  async goToCasino(): Promise<void> {
-    await this.page.goto('https://mrbit.ro/en');
-  };
-
-  async acceptCookies(): Promise<void> {
-    if (await this.acceptCookiesButton.isVisible()) {
-      await this.acceptCookiesButton.click();
-    }
-  }
-
-  async expectUrl(url: string): Promise<void> {
-    await expect(this.page).toHaveURL(url);
   }
 }
