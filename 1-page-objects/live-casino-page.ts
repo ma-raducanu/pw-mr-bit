@@ -1,5 +1,5 @@
 import type { Locator, Page } from '@playwright/test';
-import { BasePage } from './basePage';
+import { BasePage } from './base-page';
 
 export class LiveCasinoPage extends BasePage {
   readonly noDemoModal: Locator;
