@@ -3,14 +3,17 @@ import type { Locator, Page } from '@playwright/test';
 export class BasePage {
   readonly page: Page;
   readonly acceptCookiesButton: Locator;
+  readonly gameCard: Locator;
 
   constructor(page: Page) {
     this.page = page;
     this.acceptCookiesButton = page.getByRole('button', { name: 'Allow all' });
+    this.gameCard = page.locator('div.game-cell-outer');
   }
 
-  async goToHome(): Promise<void> {
+  async goToCasinoPage(): Promise<void> {
     await this.page.goto('https://mrbit.ro/en');
+    await this.acceptCookies();
   };
 
   async acceptCookies(): Promise<void> {

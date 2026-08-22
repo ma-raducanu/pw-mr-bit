@@ -31,7 +31,6 @@ export class CasinoPage extends BasePage {
   readonly signUpModalCloseButton: Locator;
   readonly menuDropdown: Locator;
   readonly newGamesLink: Locator;
-  readonly gameCard: Locator;
 
   constructor(page: Page) {
     super(page);
@@ -64,6 +63,5 @@ export class CasinoPage extends BasePage {
     this.signUpModalCloseButton = page.getByTestId('signup-widget-close-btn');
     this.menuDropdown = page.locator('div.responsive-menu__dropdown');
     this.newGamesLink = page.getByRole('link', { name: 'New' });
-    this.gameCard = page.locator('div.game-cell-outer');
   }
 }

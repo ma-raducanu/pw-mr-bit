@@ -12,4 +12,9 @@ export class LiveCasinoPage extends BasePage {
     this.noDemoModalCloseButton = page.locator('button.about-demo-popup__close');
     this.noDemoModalChooseAnotherGameLink = page.getByRole('link', { name: 'Choose another game' });
   }
+
+  async goToLiveCasinoPage(): Promise<void> {
+    await this.page.goto('https://mrbit.ro/ro/games/live');
+    await this.acceptCookies();
+  }
 }

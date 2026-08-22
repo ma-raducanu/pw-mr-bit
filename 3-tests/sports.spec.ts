@@ -1,9 +1,7 @@
 import { test, expect } from '../2-fixtures/page-fixtures';
 
-test.beforeEach(async ({ casinoPage }) => {
-  await casinoPage.goToHome();
-  await casinoPage.acceptCookies();
-  await casinoPage.sportsLink.click();
+test.beforeEach(async ({ sportsPage }) => {
+  await sportsPage.goToSportsPage();
 });
 
 test('Search for the UEFA Champions League', { tag: '@Regression' }, async ({ sportsPage }) => {

@@ -1,8 +1,7 @@
 import { test, expect } from '../2-fixtures/page-fixtures';
 
 test.beforeEach(async ({ casinoPage }) => {
-  await casinoPage.goToHome();
-  await casinoPage.acceptCookies();
+  await casinoPage.goToCasinoPage();
 });
 
 test('Navigate to the Casino page', { tag: '@Regression' }, async ({ casinoPage }) => {
