@@ -8,7 +8,7 @@ test('Navigate to the Casino page', { tag: '@Regression' }, async ({ casinoPage 
   await expect(casinoPage.casinoLink).toHaveClass(/active/);
 });
 
-test('Verify the Casino page Promotional Stories order', async ({ casinoPage }) => {
+test('Verify the Story order', async ({ casinoPage }) => {
   await expect(casinoPage.storyGroup).toContainText(['Fortune Wheel', 'Welcome Package', 'Our advantages', 'More bonuses', 'Always online']);
 });
 
