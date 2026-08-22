@@ -1,7 +1,7 @@
 import { type Locator, type Page, expect } from '@playwright/test';
 
 export class BasePage {
-  protected readonly page: Page;
+  readonly page: Page;
   readonly acceptCookiesButton: Locator;
 
   constructor(page: Page) {
@@ -17,9 +17,5 @@ export class BasePage {
     if (await this.acceptCookiesButton.isVisible()) {
       await this.acceptCookiesButton.click();
     }
-  }
-
-  async expectUrl(url: string): Promise<void> {
-    await expect(this.page).toHaveURL(url);
   }
 }

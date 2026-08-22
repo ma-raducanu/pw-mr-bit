@@ -15,19 +15,19 @@ test('Verify the Casino page Promotional Stories order', async ({ casinoPage }) 
 
 test('Navigate to the Live Casino page', { tag: '@Regression' }, async ({ casinoPage }) => {
   await casinoPage.liveCasinoLink.click();
-  await casinoPage.expectUrl('https://mrbit.ro/en/games/live');
+  await expect(casinoPage.page).toHaveURL('https://mrbit.ro/en/games/live');
   await expect(casinoPage.liveCasinoLink).toHaveClass(/active/);
 });
 
 test('Navigate to the Sports page', { tag: '@Regression' }, async ({ casinoPage }) => {
   await casinoPage.sportsLink.click();
-  await casinoPage.expectUrl('https://mrbit.ro/en/betting');
+  await expect(casinoPage.page).toHaveURL('https://mrbit.ro/en/betting');
   await expect(casinoPage.sportsLink).toHaveClass(/active/);
 });
 
 test('Navigate to the Lotto page', { tag: '@Regression' }, async ({ casinoPage }) => {
   await casinoPage.lottoLink.click();
-  await casinoPage.expectUrl('https://mrbit.ro/en/lotto');
+  await expect(casinoPage.page).toHaveURL('https://mrbit.ro/en/lotto');
   await expect(casinoPage.lottoLink).toHaveClass(/active/);
 });
 
