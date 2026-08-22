@@ -1,4 +1,4 @@
-import { test, expect } from '../2-fixtures/page-fixtures';
+import { test, expect } from '../2-fixtures/page.fixtures';
 
 test.beforeEach(async ({ casinoPage }) => {
   await casinoPage.goToCasinoPage();
