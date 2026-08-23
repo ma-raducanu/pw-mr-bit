@@ -10,18 +10,9 @@ type Pages = {
 };
 
 export const test = base.extend<Pages> ({
-  casinoPage: async ({ page }, use) => {
-    const casinoPage = new CasinoPage(page);
-    await use(casinoPage);
-  },
-  liveCasinoPage: async ({ page }, use) => {
-    const liveCasinoPage = new LiveCasinoPage(page);
-    await use(liveCasinoPage);
-  },
-  sportsPage: async ({ page }, use) => {
-    const sportsPage = new SportsPage(page);
-    await use(sportsPage);
-  },
+  casinoPage: async ({ page }, use) => await use(new CasinoPage(page)),
+  liveCasinoPage: async ({ page }, use) => await use(new LiveCasinoPage(page)),
+  sportsPage: async ({ page }, use) => await use(new SportsPage(page)),
 });
 
 export { expect } from '@playwright/test';
