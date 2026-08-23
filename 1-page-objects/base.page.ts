@@ -11,14 +11,8 @@ export class BasePage {
     this.gameCard = page.locator('div.game-cell-outer');
   }
 
-  async goToCasinoPage(): Promise<void> {
-    await this.page.goto('https://mrbit.ro/en');
-    await this.acceptCookies();
+  async goToPage(url: string): Promise<void> {
+    await this.page.goto(url);
+    await this.acceptCookiesButton.click();
   };
-
-  async acceptCookies(): Promise<void> {
-    if (await this.acceptCookiesButton.isVisible()) {
-      await this.acceptCookiesButton.click();
-    }
-  }
 }

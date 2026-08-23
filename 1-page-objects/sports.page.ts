@@ -11,12 +11,11 @@ export class SportsPage extends BasePage {
     super(page);
     this.searchButton = page.getByRole('button', { name: 'Search' });
     this.searchInput = page.locator('input[class*="SearchInput"]');
-    this.searchResults = page.locator('div[class*="EventSearchResultList"]');
+    this.searchResults = page.locator('div[class*="EventSearchResultList"] div[class*="ChampionshipContainer"]');
     this.championshipName = page.locator('div[class*="ChampionshipName"]');
   }
 
   async goToSportsPage(): Promise<void> {
-    await this.page.goto('https://mrbit.ro/en/betting');
-    await this.acceptCookies();
+    await this.goToPage('https://mrbit.ro/en/betting');
   }
 }

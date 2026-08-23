@@ -4,10 +4,11 @@ test.beforeEach(async ({ sportsPage }) => {
   await sportsPage.goToSportsPage();
 });
 
-test('Search for the UEFA Champions League', { tag: '@Regression' }, async ({ sportsPage }) => {
+test('Search for Serie A', { tag: '@Regression' }, async ({ sportsPage }) => {
   await sportsPage.searchButton.click();
-  await sportsPage.searchInput.fill('uefa champions league');
-  await expect(sportsPage.searchResults).toContainText('UEFA Champions League');
-  await sportsPage.searchResults.first().click();
-  await expect(sportsPage.championshipName).toContainText('UEFA Champions League');
+  await sportsPage.searchInput.fill('serie a');
+  const specificResult = sportsPage.searchResults.filter({ hasText: /^Football • ItalySerie A$/ });
+  await expect(specificResult).toBeVisible();
+  await specificResult.click();
+  await expect(sportsPage.championshipName).toContainText(/^Serie A • Italy$/);
 });

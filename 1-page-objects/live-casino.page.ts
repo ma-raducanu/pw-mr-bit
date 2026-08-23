@@ -14,7 +14,6 @@ export class LiveCasinoPage extends BasePage {
   }
 
   async goToLiveCasinoPage(): Promise<void> {
-    await this.page.goto('https://mrbit.ro/ro/games/live');
-    await this.acceptCookies();
+    await this.goToPage('https://mrbit.ro/en/games/live');
   }
 }

@@ -64,4 +64,8 @@ export class CasinoPage extends BasePage {
     this.menuDropdown = page.locator('div.responsive-menu__dropdown');
     this.newGamesLink = page.getByRole('link', { name: 'New' });
   }
+
+  async goToCasinoPage(): Promise<void> {
+    await this.goToPage('https://mrbit.ro/en');
+  }
 }
