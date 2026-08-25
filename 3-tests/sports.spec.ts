@@ -10,5 +10,5 @@ test('Search for Serie A', { tag: '@Regression' }, async ({ sportsPage }) => {
   const specificResult = sportsPage.searchResults.filter({ hasText: /^Football • ItalySerie A$/ });
   await expect(specificResult).toBeVisible();
   await specificResult.click();
-  await expect(sportsPage.championshipName).toContainText(/^Serie A • Italy$/);
+  await expect(sportsPage.championshipName).toHaveText(/^Serie A • Italy$/);
 });

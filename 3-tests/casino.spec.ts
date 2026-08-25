@@ -9,7 +9,7 @@ test('Navigate to the Casino page', { tag: '@Regression' }, async ({ casinoPage 
 });
 
 test('Verify the Story order', { tag: '@Regression' }, async ({ casinoPage }) => {
-  await expect(casinoPage.storyGroup).toContainText(['Fortune Wheel', 'Welcome Package', 'Our advantages', 'More bonuses', 'Always online']);
+  await expect(casinoPage.storyGroup).toHaveText(['Fortune Wheel', 'Welcome Package', 'Our advantages', 'More bonuses', 'Always online']);
 });
 
 test('Navigate to the Live Casino page', { tag: '@Regression' }, async ({ casinoPage }) => {
