@@ -32,75 +32,75 @@ test('Navigate to the Lotto page', { tag: '@Regression' }, async ({ casinoPage }
 
 test('Open the Wheel modal', { tag: '@Regression' }, async ({ casinoPage }) => {
   await casinoPage.wheelLink.click();
-  await expect(casinoPage.wheelModal).toBeVisible();
+  await expect(casinoPage.wheelModal.container).toBeVisible();
 });
 
 test('Close the Wheel modal', { tag: '@Regression' }, async ({ casinoPage }) => {
   await casinoPage.wheelLink.click();
-  await casinoPage.wheelModalCloseButton.click();
-  await expect(casinoPage.wheelModal).not.toBeVisible();
+  await casinoPage.wheelModal.closeButton.click();
+  await expect(casinoPage.wheelModal.container).not.toBeVisible();
 });
 
 test('Open the Login modal', { tag: '@Regression' }, async ({ casinoPage }) => {
   await casinoPage.logInLink.click();
-  await expect(casinoPage.loginModal).toBeVisible();
+  await expect(casinoPage.loginModal.container).toBeVisible();
 });
 
 test('Open the Login modal from the Sign-up modal', { tag: '@Regression' }, async ({ casinoPage }) => {
   await casinoPage.signUpLink.click();
-  await casinoPage.signUpModalLogInButton.click();
-  await expect(casinoPage.loginModal).toBeVisible();
+  await casinoPage.signUpModal.logInButton.click();
+  await expect(casinoPage.loginModal.container).toBeVisible();
 });
 
 test('Open the Login modal from the Wheel modal', { tag: '@Regression' }, async ({ casinoPage }) => {
   await casinoPage.wheelLink.click();
-  await casinoPage.wheelModalLogInAndSpinButton.click();
-  await expect(casinoPage.loginModal).toBeVisible();
+  await casinoPage.wheelModal.logInAndSpinButton.click();
+  await expect(casinoPage.loginModal.container).toBeVisible();
 });
 
 test('Close the Login modal', { tag: '@Regression' }, async ({ casinoPage }) => {
   await casinoPage.logInLink.click();
-  await casinoPage.loginModalCloseButton.click();
-  await expect(casinoPage.loginModal).not.toBeVisible();
+  await casinoPage.loginModal.closeButton.click();
+  await expect(casinoPage.loginModal.container).not.toBeVisible();
 });
 
 test('Verify the Login modal contents', { tag: '@Regression' }, async ({ casinoPage }) => {
   await casinoPage.logInLink.click();
-  await expect(casinoPage.loginModal).toBeVisible();
-  await expect(casinoPage.loginModalEmailInput).toBeVisible();
-  await expect(casinoPage.loginModalPasswordInput).toBeVisible();
-  await expect(casinoPage.loginModalForgotPasswordLink).toBeVisible();
-  await expect(casinoPage.loginModalLogInButton).toBeVisible();
-  await expect(casinoPage.loginModalRegisterLink).toBeVisible();
-  await expect(casinoPage.loginModalGoogleButton).toBeVisible();
-  await expect(casinoPage.loginModalGoogleFrame.getByText(/^Continue with Google$/)).toBeVisible();
+  await expect(casinoPage.loginModal.container).toBeVisible();
+  await expect(casinoPage.loginModal.emailInput).toBeVisible();
+  await expect(casinoPage.loginModal.passwordInput).toBeVisible();
+  await expect(casinoPage.loginModal.forgotPasswordLink).toBeVisible();
+  await expect(casinoPage.loginModal.logInButton).toBeVisible();
+  await expect(casinoPage.loginModal.registerLink).toBeVisible();
+  await expect(casinoPage.loginModal.googleButton).toBeVisible();
+  await expect(casinoPage.loginModal.googleFrame.getByText(/^Continue with Google$/)).toBeVisible();
 });
 
 test('Open the Sign-up modal', { tag: '@Regression' }, async ({ casinoPage }) => {
   await casinoPage.signUpLink.click();
-  await expect(casinoPage.signUpModal).toBeVisible();
+  await expect(casinoPage.signUpModal.container).toBeVisible();
 });
 
 test('Open the Sign-up modal from the Login modal', { tag: '@Regression' }, async ({ casinoPage }) => {
   await casinoPage.logInLink.click();
-  await casinoPage.loginModalRegisterLink.click();
-  await expect(casinoPage.signUpModal).toBeVisible();
+  await casinoPage.loginModal.registerLink.click();
+  await expect(casinoPage.signUpModal.container).toBeVisible();
 });
 
 test('Close the Sign-up modal', { tag: '@Regression' }, async ({ casinoPage }) => {
   await casinoPage.signUpLink.click();
-  await casinoPage.signUpModalCloseButton.click();
-  await casinoPage.signUpModalCloseButton.nth(1).click();
-  await expect(casinoPage.signUpModal).not.toBeVisible();
+  await casinoPage.signUpModal.closeButton.click();
+  await casinoPage.signUpModal.closeButton.nth(1).click();
+  await expect(casinoPage.signUpModal.container).not.toBeVisible();
 });
 
 test('Verify the Sign-up modal contents', { tag: '@Regression' }, async ({ casinoPage }) => {
   await casinoPage.signUpLink.click();
-  await expect(casinoPage.signUpModal).toBeVisible();
-  await expect(casinoPage.signUpModalGoogleButton).toBeVisible();
-  await expect(casinoPage.signUpModalEmailButton).toBeVisible();
-  await expect(casinoPage.signUpModalLogInButton).toBeVisible();
-  await expect(casinoPage.signUpModalEmailInput).toBeVisible();
-  await expect(casinoPage.signUpModalContinueButton).toBeVisible();
-  await expect(casinoPage.signUpModalContinueButton).toBeDisabled();
+  await expect(casinoPage.signUpModal.container).toBeVisible();
+  await expect(casinoPage.signUpModal.googleButton).toBeVisible();
+  await expect(casinoPage.signUpModal.emailButton).toBeVisible();
+  await expect(casinoPage.signUpModal.logInButton).toBeVisible();
+  await expect(casinoPage.signUpModal.emailInput).toBeVisible();
+  await expect(casinoPage.signUpModal.continueButton).toBeVisible();
+  await expect(casinoPage.signUpModal.continueButton).toBeDisabled();
 });

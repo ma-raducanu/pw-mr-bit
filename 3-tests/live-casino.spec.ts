@@ -5,22 +5,20 @@ test.beforeEach(async ({ liveCasinoPage }) => {
 });
 
 test('Open the Game modal', { tag: '@Regression' }, async ({ liveCasinoPage }) => {
-  await liveCasinoPage.gameCard.first().click();
-  await expect(liveCasinoPage.noDemoModal).toBeVisible();
+  await liveCasinoPage.gameGrid.gameCard.first().click();
+  await expect(liveCasinoPage.aboutDemoModal.container).toBeVisible();
 });
 
 test('Close the Game modal', { tag: '@Regression' }, async ({ liveCasinoPage }) => {
-  await liveCasinoPage.gameCard.first().click();
-  await liveCasinoPage.noDemoModalCloseButton.click();
-  await expect(liveCasinoPage.noDemoModal).not.toBeVisible();
+  await liveCasinoPage.gameGrid.gameCard.first().click();
+  await liveCasinoPage.aboutDemoModal.closeButton.click();
+  await expect(liveCasinoPage.aboutDemoModal.container).not.toBeVisible();
 });
 
-test('Verify the Game modal redirect to a different choice of games', { tag: '@Regression' }, async ({ casinoPage, liveCasinoPage }) => {
-  await liveCasinoPage.gameCard.first().click();
-  await liveCasinoPage.noDemoModalChooseAnotherGameLink.click();
+test('Verify the Game modal redirect to a different choice of games', { tag: '@Regression' }, async ({ liveCasinoPage, casinoPage }) => {
+  await liveCasinoPage.gameGrid.gameCard.first().click();
+  await liveCasinoPage.aboutDemoModal.chooseAnotherGameLink.click();
   await expect(casinoPage.page).toHaveURL('https://mrbit.ro/en/games/new');
-  if (!await casinoPage.newGamesLink.isVisible()) {
-    await casinoPage.menuDropdown.click();
-  }
-  await expect(casinoPage.newGamesLink).toHaveClass(/active/);
+  await casinoPage.gameGrid.openMenuDropdown();
+  await expect(casinoPage.gameGrid.newGamesLink).toHaveClass(/active/);
 });
