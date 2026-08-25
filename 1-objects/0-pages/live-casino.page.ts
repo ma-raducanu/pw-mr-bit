@@ -1,4 +1,4 @@
-import type { Locator, Page } from '@playwright/test';
+import type { Page } from '@playwright/test';
 import { BasePage } from './base.page';
 import { GameGrid } from '../1-components/game-grid.component';
 import { AboutDemoModal } from '../1-components/about-demo-modal.component';

@@ -1,4 +1,4 @@
-import type { Locator, FrameLocator, Page } from '@playwright/test';
+import type { Locator, Page } from '@playwright/test';
 import { SignUpModal } from '../1-components/signup-modal.component';
 import { LoginModal } from '../1-components/login-modal.component';
 import { WheelModal } from '../1-components/wheel-modal.component';

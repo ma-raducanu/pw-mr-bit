@@ -17,7 +17,7 @@ test('Close the Game modal', { tag: '@Regression' }, async ({ liveCasinoPage }) 
 
 test('Verify the Game modal redirect to a different choice of games', { tag: '@Regression' }, async ({ liveCasinoPage, casinoPage }) => {
   await liveCasinoPage.gameGrid.gameCard.first().click();
-  await liveCasinoPage.aboutDemoModal.chooseAnotherGameLink.click();
+  await liveCasinoPage.aboutDemoModal.chooseAnotherGameButton.click();
   await expect(casinoPage.page).toHaveURL('https://mrbit.ro/en/games/new');
   await casinoPage.gameGrid.openMenuDropdown();
   await expect(casinoPage.gameGrid.newGamesLink).toHaveClass(/active/);

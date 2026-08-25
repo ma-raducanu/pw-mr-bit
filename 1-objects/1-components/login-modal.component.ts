@@ -1,7 +1,6 @@
 import type { Locator, FrameLocator, Page } from '@playwright/test';
 
 export class LoginModal {
-  readonly page: Page;
   readonly container: Locator;
   readonly emailInput: Locator;
   readonly passwordInput: Locator;
@@ -13,7 +12,6 @@ export class LoginModal {
   readonly closeButton: Locator;
 
   constructor(page: Page) {
-    this.page = page;
     this.container = page.getByTestId('login-popup-form');
     this.emailInput = page.getByTestId('login-popup-form-input-name');
     this.passwordInput = page.getByTestId('login-popup-form-input-password');

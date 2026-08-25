@@ -1,7 +1,6 @@
 import type { Locator, Page } from '@playwright/test';
 
 export class SignUpModal {
-  readonly page: Page;
   readonly container: Locator;
   readonly googleButton: Locator;
   readonly emailButton: Locator;
@@ -11,7 +10,6 @@ export class SignUpModal {
   readonly closeButton: Locator;
   
   constructor(page: Page) {
-    this.page = page;
     this.container = page.locator('div.signup-widget-popup');
     this.googleButton = page.getByRole('button', { name: 'Sign up with Google' });
     this.emailButton = page.getByRole('button', { name: 'Sign up with Email' });
