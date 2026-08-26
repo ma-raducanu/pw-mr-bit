@@ -14,8 +14,4 @@ export class SportsPage extends BasePage {
     this.searchResults = page.locator('div[class*="EventSearchResultList"] div[class*="ChampionshipContainer"]');
     this.championshipName = page.locator('div[class*="ChampionshipName"]');
   }
-
-  async goToSportsPage(): Promise<void> {
-    await this.goToPage('https://mrbit.ro/en/betting');
-  }
 }

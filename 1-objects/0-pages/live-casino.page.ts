@@ -12,8 +12,4 @@ export class LiveCasinoPage extends BasePage {
     this.gameGrid = new GameGrid(page);
     this.aboutDemoModal = new AboutDemoModal(page);
   }
-
-  async goToLiveCasinoPage(): Promise<void> {
-    await this.goToPage('https://mrbit.ro/en/games/live');
-  }
 }

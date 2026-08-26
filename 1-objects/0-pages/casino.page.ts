@@ -9,8 +9,4 @@ export class CasinoPage extends BasePage {
     super(page);
     this.gameGrid = new GameGrid(page);
   }
-
-  async goToCasinoPage(): Promise<void> {
-    await this.goToPage('https://mrbit.ro/en');
-  }
 }

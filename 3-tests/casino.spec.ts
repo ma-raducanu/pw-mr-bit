@@ -1,7 +1,7 @@
 import { test, expect } from '../2-fixtures/page.fixtures';
 
 test.beforeEach(async ({ casinoPage }) => {
-  await casinoPage.goToCasinoPage();
+  await casinoPage.goToPage('https://mrbit.ro/en');
 });
 
 test('Navigate to the Casino page', { tag: '@Regression' }, async ({ casinoPage }) => {

@@ -1,7 +1,7 @@
 import { test, expect } from '../2-fixtures/page.fixtures';
 
 test.beforeEach(async ({ sportsPage }) => {
-  await sportsPage.goToSportsPage();
+  await sportsPage.goToPage('https://mrbit.ro/en/betting');
 });
 
 test('Search for Serie A', { tag: '@Regression' }, async ({ sportsPage }) => {
