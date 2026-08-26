@@ -1,7 +1,7 @@
 import type { Page } from '@playwright/test';
 import { BasePage } from './base.page';
-import { GameGrid } from '../1-components/game-grid.component';
-import { AboutDemoModal } from '../1-components/about-demo-modal.component';
+import { GameGrid } from '../components/game-grid.component';
+import { AboutDemoModal } from '../components/about-demo-modal.component';
 
 export class LiveCasinoPage extends BasePage {
   readonly gameGrid: GameGrid;

@@ -1,7 +1,7 @@
 import type { Locator, Page } from '@playwright/test';
-import { SignUpModal } from '../1-components/signup-modal.component';
-import { LoginModal } from '../1-components/login-modal.component';
-import { WheelModal } from '../1-components/wheel-modal.component';
+import { SignUpModal } from '../components/signup-modal.component';
+import { LoginModal } from '../components/login-modal.component';
+import { WheelModal } from '../components/wheel-modal.component';
 
 export class BasePage {
   readonly page: Page;

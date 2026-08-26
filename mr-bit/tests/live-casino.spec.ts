@@ -1,4 +1,4 @@
-import { test, expect } from '../2-fixtures/page.fixtures';
+import { test, expect } from '../fixtures/page.fixtures';
 
 test.beforeEach(async ({ liveCasinoPage }) => {
   await liveCasinoPage.goToPage('https://mrbit.ro/en/games/live');

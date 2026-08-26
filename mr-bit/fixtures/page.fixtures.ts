@@ -1,7 +1,7 @@
 import { test as base } from '@playwright/test';
-import { CasinoPage } from '../1-objects/0-pages/casino.page';
-import { LiveCasinoPage } from '../1-objects/0-pages/live-casino.page';
-import { SportsPage } from '../1-objects/0-pages/sports.page';
+import { CasinoPage } from '../objects/pages/casino.page';
+import { LiveCasinoPage } from '../objects/pages/live-casino.page';
+import { SportsPage } from '../objects/pages/sports.page';
 
 type Pages = {
   casinoPage: CasinoPage;
